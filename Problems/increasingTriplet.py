@@ -12,10 +12,6 @@ def increasingTriplet(nums):
 
 
 
-
-
-
-
 nums = [6,7,1,2]
 # nums = [6,7,1,2,8]
 print increasingTriplet(nums)
