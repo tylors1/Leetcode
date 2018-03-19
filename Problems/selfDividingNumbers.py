@@ -7,7 +7,6 @@ def selfDividingNumbers(left, right):
 	res = []
 	for num in range(left, right+1):
 		for i, digit in enumerate(str(num)):
-			print i, len(str(num)) - 1
 			if digit == '0' or num % int(digit) != 0:
 				break
 			else:
