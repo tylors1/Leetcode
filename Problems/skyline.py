@@ -13,7 +13,7 @@ def skyline(grid):
 		rows.append(max(row))
 	for i in range(len(grid)):
 		for j in range(len(grid[0])):
-			# grid[i][j] = min(cols[j], rows[i])
+			# grid[i][j] = min(cols[j], rows[i]) - comment line 17 and uncomment this line to return new grid
 			res += min(cols[j], rows[i]) - grid[i][j]
 	return res
 
