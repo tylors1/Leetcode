@@ -1,41 +1,39 @@
+# get diffs and store in array
+# if diffs arr < 2, return 1
+# iterate diffs array
+# 	if prod between each item is < 0, add +1 to wiggle len
+# 	return wigg len + 1
 
 
-def wiggle_max_len(nums):
-	
+def wiggle_length(nums):
 
 	if len(nums) < 2:
 		return len(nums)
 
-	# create array of differences
-	# if len is 0, return 1
-
-	# count = 1
-	# iterate differences array, find product between each item
-	# if negative, add 1 to count
-
 	diffs = []
 	for i in range(1, len(nums)):
-		item = nums[i] - nums[i-1]
-		if item != 0:
-			diffs.append(item)
+		diff = nums[i]-nums[i-1]
+		if diff != 0:
+			diffs.append(diff)
 
 	if len(diffs) == 0:
 		return 1
 
-	res = 1
+	count = 1
 	for i in range(1, len(diffs)):
 		prod = diffs[i] * diffs[i-1]
 		if prod < 0:
-			res += 1
-	return res + 1
+			count += 1
+	return count + 1
 
 
 
 
+nums = [1,2,3,4,5,6,7,8,9]
+nums = [0,0]
+
+print wiggle_length(nums)
 
 
 
-# nums = [3,3,3,2,5]
-nums = [1,17,5,10,13,15,10,5,16,8]
-# nums = [0,0]
-print wiggle_max_len(nums)
+
