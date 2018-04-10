@@ -1,10 +1,10 @@
-def robber(houses):
+def rob(nums):
+	a = nums[0]
+	b = 0
+	for num in nums[1:]:
+		a, b = max(a, b + num), a
+	return a
 
-	last = now = 0
-	for house in houses:
-		last, now = now, max(last + house, now)
 
-	return now
-
-houses = [4, 1, 5, 6, 7, 2, 5]
-print robber(houses)
+nums = [5, 4, 5, 6, 9]
+print rob(nums)

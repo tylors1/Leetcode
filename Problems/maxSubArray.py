@@ -1,24 +1,15 @@
-def max_sub_array(nums):
 
-	res = curr = nums[0]
-
-	for num in nums[1:]:
-		curr = max(num, num + curr)
-		res = max(curr, res)
+def max_subarray(nums):
+	res = nums[0]
+	last = res
+	for i in range(1, len(nums)):
+		curr = max(last + nums[i], nums[i]) # curr is max of number iterating at vs. prev element + number iterating at
+		res = max(res, curr) # res max of largest sum found or curr sum
+		last = curr # save curr found sum for next iteration
+		print curr
 	return res
 
 
 
-
 nums = [-2,1,-3,4,-1,2,1,-5,4]
-# nums = [3, -8, 1, 1, 1, 1]
-print max_sub_array(nums)
-
-
-
-# iterate each num
-# calc if sum > next num
-
-# for loop
-# 	curr = max(curr, num)
-# 	res = max(curr, res)
+print max_subarray(nums)
