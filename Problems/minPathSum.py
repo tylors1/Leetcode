@@ -1,6 +1,4 @@
-# get sums on top row and 1st column
-# nested fors
-# 	find min sum at each item, sum being current + top or from left
+
 
 def min_path_sum(grid):
 	n = len(grid)
