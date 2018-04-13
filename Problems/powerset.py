@@ -15,13 +15,14 @@ def powerset(arr):
 	res = [[]]
 	for num in arr:
 		sub = []
-		print "res", res
 		for item in res:
-			print item, [num]
-			sub += [item+[num]]
+			print item, num
+			sub += [item + [num]]
 		res += sub
-
 	return res
+
+
+
 
 def powerset_no_dupes(arr):
 	res = [[]]
