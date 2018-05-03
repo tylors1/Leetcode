@@ -22,8 +22,6 @@
 # 		high = mid - 1
 
 
-
-
 def find_index(nums, target):
 
 	low, high = 0, len(nums) - 1
