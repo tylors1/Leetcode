@@ -1,5 +1,10 @@
-def reverse_words(s):
-	return " ".join([s[::-1] for s in s.split()])
-	
+s = "Let's take LeetCode contest"
 
-print reverse_words("Let's take LeetCode contest")
+
+def reverseWords(s):
+	return ' '.join([x[::-1] for x in s.split()])
+
+
+
+
+print reverseWords(s)
