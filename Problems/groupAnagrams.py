@@ -1,13 +1,22 @@
+
+
 def groupAnagrams(strs):
 	store = {}
+
+	print ord('b')-ord('a')
+
 	for s in strs:
-		temp = ''.join(sorted(s))
-		if temp not in store:
-			store[temp] = [s]
+		counts = [0] * 26
+		for char in s:
+			counts[ord(char)-ord('a')] += 1
+		key = tuple(counts)
+		if key not in store:
+			store[key] = [s]
 		else:
-			store[temp].append(s)
-	return list(store.values())
-			
+			store[key].append(s)
+
+	return store.values()
+
 
 
 strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
