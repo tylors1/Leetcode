@@ -10,8 +10,9 @@
 # 1 1 0 0 1
 
 def numOfIslands(matrix):
-	count = 0
 
+	count = 0
+	
 	def dfs(matrix, i, j):
 		if i < 0 or j < 0 or i > len(matrix)-1 or j > len(matrix[0])-1 or matrix[i][j] == 0:
 			return
@@ -21,15 +22,15 @@ def numOfIslands(matrix):
 		dfs(matrix, i+1, j)
 		dfs(matrix, i-1, j)
 
-
 	for i in range(len(matrix)):
 		for j in range(len(matrix[0])):
 			if matrix[i][j] == 1:
-				count += 1
 				dfs(matrix, i, j)
+				count += 1
+
+
 
 	return count
-
 
 
 
