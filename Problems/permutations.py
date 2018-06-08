@@ -3,25 +3,20 @@
 
 
 def permute(s):
-
-	chars = list(s)
+	arr = list(s)
 	res = []
-
-	def recurse(s, i):
-		if i == len(s):
-			res.append(''.join(s))
-			return
-		for j in range(i, len(s)):
-			s[j], s[i] = s[i], s[j]
-			recurse(s, i+1)
-			s[j], s[i] = s[i], s[j]
-			
-
-		return res
-	return recurse(chars, 0)
+	def recurse(arr, l, r):
+		if l == r:
+			res.append(arr[:])
+		else:
+			for i in range(l, r):
+				arr[l], arr[i] = arr[i], arr[l]
+				recurse(arr, l+1, r)
+				arr[l], arr[i] = arr[i], arr[l]
 
 
-
+	recurse(arr, 0, len(arr))
+	return res
 
 s = "abc"
 print permute(s)
