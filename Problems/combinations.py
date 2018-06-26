@@ -17,7 +17,6 @@ def combinations(n, c):
 		combos.pop()
 		recurse(start + 1, combos)
 
-		pass
 
 	recurse(1, [])
 	return res

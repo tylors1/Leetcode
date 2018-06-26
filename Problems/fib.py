@@ -10,8 +10,4 @@ def fib(n):
 		return cache[n]
 
 
-
-
-
-
 print fib(200)
