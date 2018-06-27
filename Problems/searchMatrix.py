@@ -1,30 +1,29 @@
-def searchMatrix(matrix, target):
-	if matrix == None or len(matrix) < 1 or len(matrix[0]) < 1:
-		return False
 
-	c = len(matrix[0]) - 1
-	r = 0
-	while r < len(matrix) and c >= 0:
-		if matrix[r][c] == target:
+
+def searchMatrix(matrix, target):
+
+	r = len(matrix[0])-1
+	u = 0
+
+	while r >= 0 and u < len(matrix):
+		print matrix[u][r]
+		if matrix[u][r] == target:
 			return True
-		elif matrix[r][c] > target:
-			c -= 1
+		elif matrix[u][r] > target:
+			r -= 1
 		else:
-			r += 1
+			u += 1
 	return False
 
 
 
-
-
-# matrix = [[1,   4,  7, 11, 15],
-#   [2,   5,  8, 12, 19],
-#   [3,   6,  9, 16, 22],
-#   [10, 13, 14, 17, 24],
-#   [18, 21, 23, 26, 30]]
-# target = 18
-
-matrix = [[-1],[-1]]
-target = -2
-
+matrix = [
+  [1,   3,  5,  7],
+  [10, 11, 16, 20],
+  [23, 30, 34, 50]
+]
+target = 0
 print searchMatrix(matrix, target)
+
+
+
