@@ -1,6 +1,8 @@
 
 
 def searchMatrix(matrix, target):
+	if matrix == []:
+		return False
 
 	r = len(matrix[0])-1
 	u = 0
@@ -15,6 +17,27 @@ def searchMatrix(matrix, target):
 			u += 1
 	return False
 
+def searchMatrix2(matrix, target):
+	if matrix == []:
+		return False
+
+	r, c = len(matrix), len(matrix[0])
+	l, h = 0, r * c - 1
+
+	while l <= h:
+		mid = (l + h) / 2
+		num = matrix[mid/c][mid%c]
+
+		print mid, c
+		print mid/c, mid%c
+
+		if num == target:
+			return True
+		elif num < target:
+			l = mid + 1
+		else:
+			h = mid - 1
+	return False
 
 
 matrix = [
@@ -22,8 +45,8 @@ matrix = [
   [10, 11, 16, 20],
   [23, 30, 34, 50]
 ]
-target = 0
-print searchMatrix(matrix, target)
+target = 23
+print searchMatrix2(matrix, target)
 
 
 
