@@ -26,18 +26,7 @@ def search(nums, target):
 			lo = mid + 1
 		else:
 			hi = mid - 1
-	return -1 
-
-
-
-
-
-
-
-
-
-
-
+	return -1
 
 
 # nums = [8, 9, 2, 3, 4, 5, 6]
