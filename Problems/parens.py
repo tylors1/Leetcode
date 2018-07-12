@@ -13,7 +13,7 @@ def is_balanced(parens):
 				return False
 		else:
 			return False
-	return stack == []
+	return len(stack) == 0
 
 
 parens = "()"
