@@ -16,11 +16,3 @@ def is_balanced(parens):
 	return len(stack) == 0
 
 
-parens = "()"
-print is_balanced(parens)
-
-
-
-
-
-
